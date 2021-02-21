@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from pathlib import Path
+from .secret_key import *
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,10 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # 今は検索して適当に作る API_keyなど設定する場合には別ファイルにて保存
-SECRET_KEY = 'loh9j3axci_an8%d)abson7nh0bux33-xp$nk@uqeh0m-(o0j1'
+# 前バージョンではここに入力されているが，別のものに変更
+# SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# 公開時：False, 開発時：True
+# 使用時：False, 開発時：True
 DEBUG = True
 
 ALLOWED_HOSTS = []
