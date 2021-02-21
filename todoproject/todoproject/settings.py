@@ -21,10 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-
+# 今は検索して適当に作る API_keyなど設定する場合には別ファイルにて保存
+SECRET_KEY = 'loh9j3axci_an8%d)abson7nh0bux33-xp$nk@uqeh0m-(o0j1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# 公開時：False, 開発時：True
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -125,3 +127,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STATICFILES_DIRS = [str(BASE_DIR / 'static')]
+
+LOGIN_URL = 'login'

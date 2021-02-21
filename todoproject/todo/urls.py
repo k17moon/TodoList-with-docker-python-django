@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path, include
-from .views import TodoList, TodoDetail, TodoCreate, TodoDelete, TodoUpdate
+from .views import TodoList, TodoDetail, TodoCreate, TodoDelete, TodoUpdate, signupfunc, loginfunc, logoutfunc
 
 urlpatterns = [
     path('list/', TodoList.as_view(), name='list'),
@@ -22,4 +22,9 @@ urlpatterns = [
     path('create/', TodoCreate.as_view(), name='create'),
     path('delete/<int:pk>/', TodoDelete.as_view(), name='delete'),
     path('update/<int:pk>/', TodoUpdate.as_view(), name='update'),
+
+    # ログイン機能を追加
+    path('signup/', signupfunc, name='signup'),
+    path('login/', loginfunc, name='login'),
+    path('logout/', logoutfunc, name='logout'),
 ]
