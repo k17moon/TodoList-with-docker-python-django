@@ -63,7 +63,7 @@ def loginfunc(request):
             # Return an 'invalid login' error message.
             return render(request, 'login.html', {'context': 'ログインできませんでした．'})
 
-    return render(request, 'login.html', {'context': 'get method'})
+    return render(request, 'login.html', {})
 
 # ログアウト
 def logoutfunc(request):
