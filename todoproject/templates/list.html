@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base_login.html' %}
 
 {% block header %}
 <div class="jumbotron jumbotron-fluid">
@@ -10,6 +10,7 @@
 {% endblock header %}
 
 {% block content %}
+
 <div class="container">
     <a href="{% url 'create' %}" class="btn btn-secondary mb-3" tabindex="-1" role="button" aria-disabled="true">新規作成</a>
     {% for item in object_list %}
@@ -21,5 +22,7 @@
             <a href="{% url 'detail' item.pk %}" class="btn btn-dark" tabindex="-1" role="button" aria-disabled="true">詳細</a>
         </div>
     {% endfor %}
+    <a href="{% url 'logout' %}">ログアウト</a>
 </div>
+
 {% endblock content %}

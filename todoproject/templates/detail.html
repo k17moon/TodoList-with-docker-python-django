@@ -1,18 +1,18 @@
-{% extends 'base.html' %}
-
-{% block header %}
-<div class="alert alert-dark" role="alert">
-  detail
-</div>
-{% endblock header %}
-
+{% extends 'base_login.html' %}
 {% block content %}
 
-<div class="alert alert-success" role="alert">
-  {{ object.title }}
+{% if user.is_authenticated %}
+<div class="alert alert-dark" role="alert">
+  詳細
 </div>
 <div class="alert alert-success" role="alert">
-  {{ object.memo }}
+  タイトル：{{ object.title }}
 </div>
-
+<div class="alert alert-success" role="alert">
+  メモ：{{ object.memo }}
+</div>
+{% else %}
+    ログインしてください
+    <p><a href="{% url 'login' %}">ログインはこちら</a></p>
+{% endif %}
 {% endblock content %}

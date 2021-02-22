@@ -18,11 +18,13 @@
     {% block header %}
     {% endblock header %}
 
-
-
+{% if user.is_authenticated %}
     {% block content %}
     {% endblock content %}
-
+{% else %}
+    ログインしてください
+    <p><a href="{% url 'login' %}">ログインはこちら</a></p>
+{% endif %}
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

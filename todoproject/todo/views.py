@@ -36,6 +36,7 @@ class TodoUpdate(UpdateView):
     success_url = reverse_lazy('list')
 
 # ログイン機能の関数
+# サインアップ：登録
 def signupfunc(request):
     if request.method == "POST":
         username = request.POST['username']
@@ -48,7 +49,7 @@ def signupfunc(request):
 
     return render(request, 'signup.html', {})
 
-
+# ログイン
 def loginfunc(request):
     if request.method == "POST":
         username = request.POST['username']
@@ -64,6 +65,7 @@ def loginfunc(request):
 
     return render(request, 'login.html', {'context': 'get method'})
 
+# ログアウト
 def logoutfunc(request):
     logout(request)
     # Redirect to a success page.
